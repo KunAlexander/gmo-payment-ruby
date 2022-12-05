@@ -660,7 +660,7 @@ module GMO
 
       private
 
-        def api_call(name, args = {}, verb = "post", options = {})
+        def api_call(name, args = {}, verb = "post", options = {token_type: 'APay'})
           args.merge!({ "ShopID" => @shop_id, "ShopPass" => @shop_pass })
           api(name, args, verb, options) do |response|
             if response.is_a?(Hash) && !response["ErrInfo"].nil?
