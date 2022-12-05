@@ -651,6 +651,13 @@ module GMO
         post_request name, options
       end
 
+      def search_card_detail(options = {})
+        name = "SearchCardDetail.idPass"
+        required = [:order_id]
+        assert_required_options(required, options)
+        post_request name, options
+      end
+
       private
 
         def api_call(name, args = {}, verb = "post", options = {})
