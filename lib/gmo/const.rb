@@ -44,6 +44,7 @@ module GMO
       :card_no               => "CardNo",
       :card_pass             => "CardPass",
       :card_seq              => "CardSeq",
+      :valid_flag            => "ValidFlag",
       :charge_day            => "ChargeDay",
       :charge_month          => "ChargeMonth",
       :charge_start_date     => "ChargeStartDate",
