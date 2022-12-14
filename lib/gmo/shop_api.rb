@@ -415,7 +415,6 @@ module GMO
       def exec_tran_brandtoken(options = {})
         name = "ExecTranBrandtoken.idPass"
         options[:token_type] = GMO::Const::TOKEN_TYPES_MAP[options[:token_type]]
-        puts options
         required = [:access_id, :access_pass, :order_id]
         assert_required_options(required, options)
         post_request name, options
@@ -665,10 +664,6 @@ module GMO
           args.merge!({ "ShopID" => @shop_id, "ShopPass" => @shop_pass })
           api(name, args, verb, options) do |response|
             if response.is_a?(Hash) && !response["ErrInfo"].nil?
-              puts options
-              puts 'まだ働いています'
-              puts response["ErrInfo"]
-              puts 'HELLO'
               raise APIError.new(response, locale)
             end
           end
